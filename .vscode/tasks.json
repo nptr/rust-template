@@ -12,6 +12,16 @@
 			}
 		},
 		{
+			"label": "cargo build release",
+			"type": "shell",
+			"command": "cargo build --release",
+			"args": [],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			}
+		},
+		{
 			"label": "cargo run",
 			"type": "shell",
 			"command": "cargo run",
