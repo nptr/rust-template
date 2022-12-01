@@ -22,6 +22,16 @@
 			}
 		},
 		{
+			"label": "cargo test build",
+			"type": "shell",
+			"command": "cargo test --no-run",
+			"args": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
 			"label": "cargo run",
 			"type": "shell",
 			"command": "cargo run",

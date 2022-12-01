@@ -2,7 +2,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "(Windows MSVC) Debug",
+			"name": "(Win MSVC) Debug",
 			"type": "cppvsdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/target/debug/${workspaceFolderBasename}.exe",
@@ -14,7 +14,7 @@
 			"preLaunchTask": "cargo build"
 		},
 		{
-			"name": "(Windows MinGW) Debug",
+			"name": "(Win MinGW) Debug",
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/target/debug/${workspaceFolderBasename}.exe",
@@ -32,23 +32,31 @@
 			"request": "launch",
 			"program": "${workspaceFolder}/target/debug/${workspaceFolderBasename}",
 			"args": [],
-			"stopAtEntry": false,
+			"stopOnEntry": false,
 			"cwd": "${workspaceFolder}",
-			"environment": [],
+			"env": {},
 			"console": "integratedTerminal",
 			"preLaunchTask": "cargo build"
 		},
 		{
-			"name": "(Linux) Debug Unit Tests",
+			"name": "(Linux) Debug Tests",
 			"type": "lldb",
 			"request": "launch",
-			"program": "cargo",
+			"program": "${workspaceFolder}/target/debug/deps/REPLACE_WITH_FILENAME",
 			"args": [],
-			"stopAtEntry": false,
+			"stopOnEntry": false,
 			"cwd": "${workspaceFolder}",
-			"environment": [],
+			"env": {},
 			"console": "integratedTerminal",
-			"preLaunchTask": "cargo build"
+			"preLaunchTask": "cargo test build"
+		},
+		{
+			"name": "(Linux) Attach",
+			"type": "lldb",
+			"request": "attach",
+			"program": "${workspaceFolder}/target/debug/${workspaceFolderBasename}",
+			"pid": "${command:pickProcess}",
+			"stopOnEntry": false,
 		}
 	]
 }
